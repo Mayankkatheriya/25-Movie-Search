@@ -4,10 +4,13 @@ let pagination = document.querySelector("#pages");
 let prevBtn = document.querySelector("#prev");
 let nextBtn = document.querySelector("#next");
 let navbar = document.querySelector("nav");
+let myDialog = document.querySelector("#myDialog");
+let modal = document.querySelector(".modal");
 let apiKey = "1ca6ed19";
 let pageNo = 1;
 prevBtn.disabled = true;
 
+//TODO Append All Movies and pages
 function appendData(data) {
   if (pageNo == 1) {
     prevBtn.disabled = true;
@@ -21,6 +24,7 @@ function appendData(data) {
         ele.Poster = "./istockphoto-123493018-612x612.jpg";
       }
       let div = document.createElement("div");
+      div.setAttribute("onclick", `showDetails('${ele.imdbID}')`);
       div.classList.add("movie-card");
       div.innerHTML = `
             <div class="movie-img">
@@ -46,6 +50,8 @@ function appendData(data) {
     pagination.innerHTML = `Page <span id = "curr">1</span>`;
   }
 }
+
+//TODO function to fetch data of all Movies
 async function fetchAPI() {
   let searchStr = input.value;
   if (searchStr == "") {
@@ -64,6 +70,8 @@ async function fetchAPI() {
     }
   }
 }
+
+//TODO Debounce Function
 function debounce(fetchAPI, delay) {
   let timeOutId;
   return () => {
@@ -75,11 +83,14 @@ function debounce(fetchAPI, delay) {
 }
 
 let debounceMovies = debounce(fetchAPI, 300);
+
+//TODO Event on input
 input.addEventListener("input", (e) => {
   pageNo = 1;
   debounceMovies();
 });
 
+//TODO Click Event on Prev button
 prevBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (pageNo > 1) {
@@ -88,6 +99,8 @@ prevBtn.addEventListener("click", (e) => {
     debounceMovies();
   }
 });
+
+//TODO Click Event on Next button
 nextBtn.addEventListener("click", (e) => {
   e.preventDefault();
   pageNo++;
@@ -96,9 +109,61 @@ nextBtn.addEventListener("click", (e) => {
 
 //TODO Navbar scroll
 window.addEventListener("scroll", () => {
-  if (window.innerHeight+window.scrollY > window.innerHeight+navbar.offsetHeight) {
-    navbar.style.opacity = "0.9"
+  if (
+    window.innerHeight + window.scrollY >
+    window.innerHeight + navbar.offsetHeight
+  ) {
+    navbar.style.opacity = "0.9";
   } else {
-    navbar.style.opacity = "1"
+    navbar.style.opacity = "1";
   }
 });
+
+//TODO Show details Function
+async function showDetails(id) {
+  const data = await fetch(
+    `http://www.omdbapi.com/?&apikey=1ca6ed19&i=${id}&plot=full`
+  );
+  let movieData = await data.json();
+  if (movieData.Poster == "N/A") {
+    movieData.Poster = "./istockphoto-123493018-612x612.jpg";
+  }
+  modal.innerHTML = `
+    <svg
+          onclick="closeDialog()"
+          id="closeBtn"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#7d7a78"
+            d="M3 16.74L7.76 12L3 7.26L7.26 3L12 7.76L16.74 3L21 7.26L16.24 12L21 16.74L16.74 21L12 16.24L7.26 21L3 16.74m9-3.33l4.74 4.75l1.42-1.42L13.41 12l4.75-4.74l-1.42-1.42L12 10.59L7.26 5.84L5.84 7.26L10.59 12l-4.75 4.74l1.42 1.42L12 13.41Z"
+          />
+        </svg>
+        <img id="modal-img" src="${movieData.Poster}" alt="" />
+        <div class="modal-details">
+          <h2>Title: ${movieData.Title}</h2>
+          <p>
+            <span>Plot</span>: ${movieData.Plot}
+          </p>
+          <p>
+            <span>Actors</span>: ${movieData.Actors}
+          </p>
+          <p><span>Director(s)</span>: ${movieData.Director}</p>
+          <p>
+            <span>Writer(s)</span>: ${movieData.Writer}
+          </p>
+          <p><span>Genres</span>: ${movieData.Genre}</p>
+          <p><span>Released</span>: ${movieData.Released}</p>
+          <p><span>IMDB Rating</span>: ${movieData.imdbRating}/10</p>
+          <p><span>Language</span>: ${movieData.Language}</p>
+          <p><span>Country</span>: ${movieData.Country}</p>
+        </div>`;
+  myDialog.show();
+}
+
+function closeDialog() {
+  myDialog.close();
+}

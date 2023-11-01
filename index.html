@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies Search</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-        <a href="./index.html"><span>
-            <img src="./film-reel.svg" alt="">
-        </span>Movies Search</a href="./index.html">
-        <input type="text" placeholder="search by name">
+      <a href="./index.html"
+        ><span> <img src="./film-reel.svg" alt="" /> </span>Movies Search
+      </a>
+      <input type="text" placeholder="search by name" />
     </nav>
     <div class="container">
-        <div id="movie">Please enter a search term</div>
-        <div id="pagination">
-            <button id="prev">Prev</button>
-            <span id="pages">Page <span id = "curr">1</span></span>
-            <button id="next">Next</button>
-        </div>
+      <div id="movie">Please enter a search term</div>
+      <div id="pagination">
+        <button id="prev">Prev</button>
+        <span id="pages">Page <span id="curr">1</span></span>
+        <button id="next">Next</button>
+      </div>
     </div>
+    <dialog id="myDialog">
+      <div class="modal"></div>
+    </dialog>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

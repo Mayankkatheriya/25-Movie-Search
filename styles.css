@@ -1,156 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #ddddc3 #757575;
+  scrollbar-width: thin;
+  scrollbar-color: #ddddc3 #757575;
 }
 *::-webkit-scrollbar {
-width: 14px;
+  width: 14px;
 }
 
 *::-webkit-scrollbar-track {
-background: rgb(174,235,234);
+  background: rgb(174, 235, 234);
 }
 
 *::-webkit-scrollbar-thumb {
-background-color: #ffa9a9;
-border-radius: 10px;
-border: 3px solid rgb(174,235,234);
+  background-color: #ffa9a9;
+  border-radius: 10px;
+  border: 3px solid rgb(174, 235, 234);
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(240deg, #a8edea 0%, #fed6e3 100%);
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(240deg, #a8edea 0%, #fed6e3 100%);
 }
-nav{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    gap: 1rem;
-    background-color: rgb(211, 247, 235);
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-nav a{
-    text-decoration: none;
-    font-weight: 700;
-    font-family: 'Pixelify Sans', sans-serif;
-    font-size: 2rem;
-    color: black;
-}
-nav input{
-    background-color: transparent;
-    border-radius: 20px;
-    outline: none;
-    width: 100%;
-    max-width: 400px;
-    padding: 0.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.7) ;
-    transition: all .5s;
-    border: 1px dotted green;
-    background-color: #a8edea;
-}
-nav input::placeholder{
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-transform: capitalize;
-}
-nav input:focus{
-    box-shadow: none;
-}
-.container{
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#movie{
-    width: 100%;
-    min-height: 75vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: 700;
-    text-transform: capitalize;
+nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  background-color: rgb(211, 247, 235);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.movie-card{
-    max-width: 300px;
-    width: 100%;
-    border-radius: 10px;
-    color: rgb(214, 214, 214);
-    background-color: rgb(0, 0, 0);
-    transition: all 0.5s;
-    box-shadow: 2px 2px 5px 5px rgb(49, 49, 49);
+nav a {
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 2rem;
+  color: black;
 }
-.movie-card:hover{
-    transform: scale(1.08);
-    box-shadow: none;
+nav input {
+  background-color: transparent;
+  border-radius: 20px;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.7);
+  transition: all 0.5s;
+  border: 1px dotted green;
+  background-color: #a8edea;
 }
-.movie-img{
-    width: 100%;
-    height: 300px;
-    margin-bottom: 1rem;
-    border-radius: 10px 10px 0 0;
+nav input::placeholder {
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }
-.movie-img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px 10px 0 0;
+nav input:focus {
+  box-shadow: none;
 }
-.movie-title{
-    font-size: 1rem;
-    font-weight: 700;
-    padding: .2rem 1rem;
+.container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.movie-year{
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: .2rem 1rem;
+#movie {
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
-#pagination{
-    padding: 1rem;
-    width: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.movie-card {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  color: rgb(214, 214, 214);
+  background-color: rgb(0, 0, 0);
+  transition: all 0.5s;
+  box-shadow: 2px 2px 5px 5px rgb(49, 49, 49);
 }
-#pages{
-    font-size: 1.2rem;
+.movie-card:hover {
+  transform: scale(1.08);
+  box-shadow: none;
 }
-#curr{
-    font-size: 1.5rem;
+.movie-img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1rem;
+  border-radius: 10px 10px 0 0;
+}
+.movie-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.movie-title {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.2rem 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.movie-year {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.2rem 1rem;
+}
+
+#pagination {
+  padding: 1rem;
+  width: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#pages {
+  font-size: 1.2rem;
+}
+#curr {
+  font-size: 1.5rem;
 }
 
 button {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #222222;
   border-radius: 8px;
   box-sizing: border-box;
   color: #222222;
   cursor: pointer;
   display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -161,7 +166,8 @@ button {
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
   user-select: none;
   -webkit-user-select: none;
   width: auto;
@@ -169,18 +175,101 @@ button {
 
 button:focus-visible {
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 
 button:active {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-color: #000000;
-  transform: scale(.96);
+  transform: scale(0.96);
 }
 
 button:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
+  border-color: #dddddd;
+  color: #dddddd;
   cursor: not-allowed;
   opacity: 1;
+}
+#myDialog {
+  pointer-events: none;
+  position: fixed;
+  display: grid;
+  min-height: 100vh;
+  max-height: none;
+  width: 100%;
+  max-width: none;
+  justify-items: center;
+  opacity: 0;
+  overscroll-behavior: contain;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background-color: transparent;
+  color: inherit;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+  place-items: center;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#myDialog[open] {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+.modal {
+  background-color: #a8edea;
+  width: 100%;
+  max-width: 600px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: all 0.8s;
+  overflow-y: scroll;
+}
+.modal::-webkit-scrollbar {
+  display: none;
+}
+#closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+#modal-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal-details h2 {
+  font-size: 1.8rem;
+}
+.modal-details p {
+  font-weight: 500;
+}
+.modal-details p span {
+  font-weight: 700;
+}
+@media screen and (max-width: 737px) {
+  nav {
+    justify-content: center;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
 }
