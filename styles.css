@@ -37,7 +37,7 @@ nav {
   background-color: rgb(211, 247, 235);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
   position: sticky;
-  top: 0;
+  top: -10px;
   z-index: 999;
 }
 
@@ -89,6 +89,8 @@ nav input:focus {
   text-align: center;
   font-weight: 700;
   text-transform: capitalize;
+  color: #5dd3eb;
+  text-shadow: 2px 2px 2px rgb(43, 42, 42);
 }
 
 .movie-card {
@@ -99,6 +101,7 @@ nav input:focus {
   background-color: rgb(0, 0, 0);
   transition: all 0.5s;
   box-shadow: 2px 2px 5px 5px rgb(49, 49, 49);
+  cursor: pointer;
 }
 .movie-card:hover {
   transform: scale(1.08);
@@ -141,9 +144,11 @@ nav input:focus {
 }
 #pages {
   font-size: 1.2rem;
+  color: #444444;
 }
 #curr {
   font-size: 1.5rem;
+  color: #000000;
 }
 
 button {
@@ -272,4 +277,9 @@ button:disabled {
     width: 100%;
     text-align: center;
   }
+}
+@media screen and (max-width: 320px) {
+    nav a {
+        font-size: 1.5rem;
+    }
 }
