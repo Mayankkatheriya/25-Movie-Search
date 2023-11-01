@@ -108,14 +108,14 @@ nextBtn.addEventListener("click", (e) => {
 });
 
 //TODO Navbar scroll
-window.addEventListener("scroll", () => {
+movieContainer.addEventListener("scroll", (e) => {
+  console.log(e.target.scrollTop);
   if (
-    window.innerHeight + window.scrollY >
-    window.innerHeight + navbar.offsetHeight
+    e.target.scrollTop > 100
   ) {
-    navbar.style.opacity = "0.9";
+    navbar.style.backgroundColor = "transparent";
   } else {
-    navbar.style.opacity = "1";
+    navbar.style.backgroundColor = "rgb(211, 247, 235)";
   }
 });
 

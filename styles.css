@@ -25,6 +25,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-image: linear-gradient(240deg, #a8edea 0%, #fed6e3 100%);
+  overflow: hidden;
 }
 nav {
   width: 100%;
@@ -78,7 +79,7 @@ nav input:focus {
 }
 #movie {
   width: 100%;
-  min-height: 75vh;
+  height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -91,6 +92,7 @@ nav input:focus {
   text-transform: capitalize;
   color: #5dd3eb;
   text-shadow: 2px 2px 2px rgb(43, 42, 42);
+  overflow-y: scroll;
 }
 
 .movie-card {
