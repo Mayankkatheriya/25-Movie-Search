@@ -11,21 +11,11 @@
 }
 *::-webkit-scrollbar {
   width: 14px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgb(174, 235, 234);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #ffa9a9;
-  border-radius: 10px;
-  border: 3px solid rgb(174, 235, 234);
+  display: none;
 }
 body {
   font-family: "Roboto", sans-serif;
   background-image: linear-gradient(240deg, #a8edea 0%, #fed6e3 100%);
-  overflow: hidden;
 }
 nav {
   width: 100%;
