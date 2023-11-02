@@ -164,7 +164,7 @@ async function showDetails(id) {
 }
 
 function closeDialog() {
-  document.body.style.overflow = "scroll";
+  document.body.style.overflowY = "scroll";
   myDialog.close();
 }
 myDialog.addEventListener("click", (e) => {
