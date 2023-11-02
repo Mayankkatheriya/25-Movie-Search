@@ -191,7 +191,7 @@ button:disabled {
   pointer-events: none;
   position: fixed;
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   max-height: none;
   width: 100%;
   max-width: none;

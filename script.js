@@ -110,9 +110,7 @@ nextBtn.addEventListener("click", (e) => {
 //TODO Navbar scroll
 movieContainer.addEventListener("scroll", (e) => {
   console.log(e.target.scrollTop);
-  if (
-    e.target.scrollTop > 100
-  ) {
+  if (e.target.scrollTop > 100) {
     navbar.style.backgroundColor = "transparent";
   } else {
     navbar.style.backgroundColor = "rgb(211, 247, 235)";
@@ -121,6 +119,7 @@ movieContainer.addEventListener("scroll", (e) => {
 
 //TODO Show details Function
 async function showDetails(id) {
+  document.body.style.overflow = "hidden";
   const data = await fetch(
     `http://www.omdbapi.com/?&apikey=1ca6ed19&i=${id}&plot=full`
   );
@@ -165,5 +164,12 @@ async function showDetails(id) {
 }
 
 function closeDialog() {
+  document.body.style.overflow = "scroll";
   myDialog.close();
 }
+myDialog.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (e.target.id == "myDialog") {
+    closeDialog();
+  }
+});
