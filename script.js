@@ -160,6 +160,7 @@ async function showDetails(id) {
           <p><span>Language</span>: ${movieData.Language}</p>
           <p><span>Country</span>: ${movieData.Country}</p>
         </div>`;
+  console.log("test");
   myDialog.show();
 }
 
