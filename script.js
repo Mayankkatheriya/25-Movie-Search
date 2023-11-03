@@ -121,7 +121,7 @@ movieContainer.addEventListener("scroll", (e) => {
 async function showDetails(id) {
   document.body.style.overflow = "hidden";
   const data = await fetch(
-    `http://www.omdbapi.com/?&apikey=1ca6ed19&i=${id}&plot=full`
+    `https://www.omdbapi.com/?&apikey=1ca6ed19&i=${id}&plot=full`
   );
   let movieData = await data.json();
   if (movieData.Poster == "N/A") {
